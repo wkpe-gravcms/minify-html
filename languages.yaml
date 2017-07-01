@@ -1,0 +1,5 @@
+en:
+  PLUGIN_MINIFYHTML:
+    SECTION_NAME: Settings
+    MINCSS: Minify inline CSS
+    MINJS: Minify inline JS
