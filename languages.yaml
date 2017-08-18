@@ -3,3 +3,9 @@ en:
     SECTION_NAME: Settings
     MINCSS: Minify inline CSS
     MINJS: Minify inline JS
+
+fr:
+  PLUGIN_MINIFYHTML:
+    SECTION_NAME: Paramètres
+    MINCSS: Minifier le code CSS
+    MINJS: Minifier le code JS

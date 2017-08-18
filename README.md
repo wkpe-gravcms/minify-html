@@ -40,8 +40,3 @@ enabled: true
 
 You just have to enable the plugin to minify the HTML content.
 You can see the result by looking at the source in the browser console.
-
-## Todo
-
-* [ ] Minify inline CSS toggle
-* [ ] Minify inline JS toggle
