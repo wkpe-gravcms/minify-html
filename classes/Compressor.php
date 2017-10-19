@@ -39,7 +39,7 @@ class Compressor
     public function minifyHtml($input) {
 
         $mincss = $this->mincss;
-        $minjs = $this->mincss;
+        $minjs = $this->minjs;
 
         if(trim($input) === "") return $input;
         // Remove extra white-space(s) between HTML attribute(s)
