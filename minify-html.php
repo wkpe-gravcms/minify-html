@@ -48,14 +48,20 @@ class MinifyHtmlPlugin extends Plugin
      */
     public function onOutputGenerated()
     {
-        $minifyhtml = $this->config['plugins.minify-html.enabled'];
-          if ($minifyhtml) {
-              require_once(__DIR__ . '/classes/Compressor.php');
-              $compressor = new Compressor();
-              $buffer = $this->grav['output'];
-              $minifyhtml = $compressor->minifyHtml($buffer);
-              $this->grav->output = $minifyhtml;
-          }
+        if ($this->config['plugins.minify-html.enabled']) {
+            require_once(__DIR__ . '/vendor/autoload.php');
+
+            // HTML input (not compressed)
+            $sourceHtml = $this->grav['output'];
+
+            // Instantiate the compressor
+            $compressor = \WyriHaximus\HtmlCompress\Factory::construct();
+
+            // HTML output (compressed)
+            $compressedHtml = $compressor->compress($sourceHtml);
+
+            // Return the compressed HTML
+            $this->grav->output = $compressedHtml;
+        }
     }
 }
-

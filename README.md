@@ -2,8 +2,6 @@
 
 **Minify Html** is a [Grav CMS](http://github.com/getgrav/grav) plugin to minify HTML output.
 
-![](assets/minifyhtml.jpg)
-
 ## Installation
 
 Installing the Minify Html plugin can be done in two ways. The GPM (Grav Package Manager) installation method enables you to quickly and easily install the plugin with a simple terminal command, while the manual method enables you to do so via a zip file.

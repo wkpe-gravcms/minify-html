@@ -1,3 +1,11 @@
+# v0.0.5
+##  11/13/2017
+
+1. [](#improved)
+    * Add WyriHaximus/HtmlCompress (know minify html / css / js by default)
+    * Removed options in admin to toggle inline CSS minifier
+    * Removed options in admin to toggle inline JS minifier
+
 # v0.0.4
 ##  10/20/2017
 
