@@ -7,7 +7,7 @@ author:
 homepage: 'https://github.com/jimblue/grav-plugin-minify-html'
 keywords: 'grav-cms, grav-plugin, minify-html'
 bugs: 'https://github.com/jimblue/grav-plugin-minify-html/issues'
-docs: 'https://github.com/jimblue/grav-plugin-minify-html/README.md'
+docs: 'https://github.com/jimblue/grav-plugin-minify-html/blob/master/README.md'
 license: MIT
 form:
   validation: strict
