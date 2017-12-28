@@ -22,3 +22,17 @@ form:
         '1': Enabled
       validate:
         type: bool
+    mode:
+      type: select
+      size: medium
+      label: Compression Mode
+      help: >-
+        Choose a compression mode (default compress JS and CSS but doesn't do it
+        aggressively to get the smallest size.Fastest only compresses HTML and
+        ignores the rest. Smallest compress everything aggressively to get the
+        smallest size.)
+      default: default
+      options:
+        default: default
+        fastest: fastest
+        smallest: smallest
