@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3c64111bcc518a4fc32b9b0d15e60529
+class ComposerStaticInit3dd0f8d48a81da0a3c9fdc59d11c5654
 {
     public static $files = array (
         '52e181473ddd523a649d74860143e341' => __DIR__ . '/..' . '/meenie/javascript-packer/class.JavaScriptPacker.php',
@@ -113,9 +113,9 @@ class ComposerStaticInit3c64111bcc518a4fc32b9b0d15e60529
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3c64111bcc518a4fc32b9b0d15e60529::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3c64111bcc518a4fc32b9b0d15e60529::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit3c64111bcc518a4fc32b9b0d15e60529::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3dd0f8d48a81da0a3c9fdc59d11c5654::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3dd0f8d48a81da0a3c9fdc59d11c5654::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit3dd0f8d48a81da0a3c9fdc59d11c5654::$classMap;
 
         }, null, ClassLoader::class);
     }
