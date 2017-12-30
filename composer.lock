@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aca8d83ded31c457113488475a0a0ec5",
+    "content-hash": "92875b2ecbe0c1baaebd95988918280f",
     "packages": [
         {
             "name": "linkorb/jsmin-php",
@@ -250,16 +250,16 @@
         },
         {
             "name": "wyrihaximus/html-compress",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/HtmlCompress.git",
-                "reference": "44d84ed592fba09e002a1b3ad2f9d9889e69785c"
+                "reference": "53deb4477dc6eac56b5f76b7ca6ea20c04305c5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/HtmlCompress/zipball/44d84ed592fba09e002a1b3ad2f9d9889e69785c",
-                "reference": "44d84ed592fba09e002a1b3ad2f9d9889e69785c",
+                "url": "https://api.github.com/repos/WyriHaximus/HtmlCompress/zipball/53deb4477dc6eac56b5f76b7ca6ea20c04305c5d",
+                "reference": "53deb4477dc6eac56b5f76b7ca6ea20c04305c5d",
                 "shasum": ""
             },
             "require": {
@@ -298,7 +298,7 @@
                 "compress",
                 "html"
             ],
-            "time": "2017-12-27T15:49:31+00:00"
+            "time": "2017-12-30T21:54:41+00:00"
         }
     ],
     "packages-dev": [],
@@ -308,5 +308,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "5.6.13"
+    }
 }
