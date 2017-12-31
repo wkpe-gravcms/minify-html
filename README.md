@@ -8,7 +8,7 @@ Installing the Minify Html plugin can be done in two ways. The GPM (Grav Package
 
 ### GPM Installation (Preferred)
 
-The simplest way to install this plugin is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm) through your system's terminal (also called the command line).  From the root of your Grav install type:
+The simplest way to install this plugin is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm) through your system's terminal (also called the command line). From the root of your Grav install type:
 
     bin/gpm install minify-html
 
@@ -39,10 +39,10 @@ enabled: true
 You just have to enable the plugin to minify the HTML content.
 You can see the result by looking at the source in the browser console.
 
-## compression mode
+## Compression mode
 
 You can choose between 3 compression mode:
 
-- default compress JS and CSS but doesn't do it aggressively to get the smallest size.
-- Fastest only compresses HTML and ignores the rest.
-- Smallest compress everything aggressively to get the smallest size.
+* default compress JS and CSS but doesn't do it aggressively to get the smallest size.
+* Fastest only compresses HTML and ignores the rest.
+* Smallest compress everything aggressively to get the smallest size.
