@@ -1,3 +1,13 @@
+# v0.0.8
+## 02/02/2018
+
+1. [](#improved)
+   * Updated php dependencies
+1. [](#bugfix)
+   * Fix Undefined variable: compressor (default mode: 'default')
+1. [](#new)
+   * Added language support in Admin
+
 # v0.0.7
 ## 12/28/2017
 
