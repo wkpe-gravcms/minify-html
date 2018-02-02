@@ -13,10 +13,15 @@ namespace WyriHaximus\HtmlCompress;
 use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
 use WyriHaximus\HtmlCompress\Compressor\CssMinCompressor;
 use WyriHaximus\HtmlCompress\Compressor\CssMinifierCompressor;
+use WyriHaximus\HtmlCompress\Compressor\JShrinkCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JSMinCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
+use WyriHaximus\HtmlCompress\Compressor\MMMCSSCompressor;
+use WyriHaximus\HtmlCompress\Compressor\MMMJSCompressor;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
+use WyriHaximus\HtmlCompress\Compressor\YUICSSCompressor;
+use WyriHaximus\HtmlCompress\Compressor\YUIJSCompressor;
 
 /**
  * Class Factory
@@ -97,9 +102,10 @@ class Factory
     }
 
     /**
+     * @param bool $externalCompressors When set to false only use pure PHP compressors.
      * @return Parser
      */
-    public static function constructSmallest()
+    public static function constructSmallest($externalCompressors = true)
     {
         return new Parser(
             [
@@ -116,8 +122,11 @@ class Factory
                         ],
                         'compressor' => new BestResultCompressor(
                             [
+                                new MMMJSCompressor(),
                                 new JSMinCompressor(),
                                 new JavaScriptPackerCompressor(),
+                                new JShrinkCompressor(),
+                                new YUIJSCompressor(),
                                 new ReturnCompressor(), // Sometimes no compression can already be the smallest
                             ]
                         ),
@@ -128,9 +137,12 @@ class Factory
                         ],
                         'compressor' => new BestResultCompressor(
                             [
+                                new MMMJSCompressor(),
                                 new JSqueezeCompressor(),
                                 new JSMinCompressor(),
                                 new JavaScriptPackerCompressor(),
+                                new JShrinkCompressor(),
+                                $externalCompressors ? new YUICSSCompressor() : new ReturnCompressor(),
                                 new ReturnCompressor(), // Sometimes no compression can already be the smallest
                             ]
                         ),
@@ -150,8 +162,10 @@ class Factory
                         ],
                         'compressor' => new BestResultCompressor(
                             [
+                                new MMMCSSCompressor(),
                                 new CssMinCompressor(),
                                 new CssMinifierCompressor(),
+                                $externalCompressors ? new YUICSSCompressor() : new ReturnCompressor(),
                                 new ReturnCompressor(),
                             ]
                         ),
