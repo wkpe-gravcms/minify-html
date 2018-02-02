@@ -53,13 +53,13 @@ class MinifyHtmlPlugin extends Plugin
   {
     require_once(__DIR__ . '/vendor/autoload.php');
 
-      // HTML input (not compressed)
+    // HTML input (not compressed)
     $sourceHtml = $this->grav['output'];
 
-      // Compression mode
+    // Compression mode
     $mode = $this->config['plugins.minify-html.mode'];
 
-      // Instantiate the compressor
+    // Instantiate the compressor
     if ($mode == 'default') {
       $compressor = Factory::construct();
     } elseif ($mode == 'fastest') {
@@ -68,10 +68,10 @@ class MinifyHtmlPlugin extends Plugin
       $compressor = Factory::constructSmallest();
     }
 
-      // HTML output (compressed)
+    // HTML output (compressed)
     $compressedHtml = $compressor->compress($sourceHtml);
 
-      // Return the compressed HTML
+    // Return the compressed HTML
     $this->grav->output = $compressedHtml;
   }
 }
