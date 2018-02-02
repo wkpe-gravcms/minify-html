@@ -3,6 +3,7 @@ namespace Grav\Plugin;
 
 use Grav\Common\Plugin;
 use Grav\Plugin\MinifyHtml\Compressor;
+use WyriHaximus\HtmlCompress\Factory;
 
 /**
  * Class MinifyHtmlPlugin
@@ -33,14 +34,16 @@ class MinifyHtmlPlugin extends Plugin
   public function onPluginsInitialized()
   {
     // Don't proceed if we are in the admin plugin
-    if ($this->isAdmin()) {
-      return;
-    }
+    if ($this->isAdmin()) return;
+
+    // Check if plugin is enabled
+    if ($this->config['plugins.minify-html.enabled']) {
 
     // Enable the main event we are interested in
-    $this->enable([
-      'onOutputGenerated' => ['onOutputGenerated', 0]
-    ]);
+      $this->enable([
+        'onOutputGenerated' => ['onOutputGenerated', 0]
+      ]);
+    }
   }
 
   /**
@@ -48,29 +51,27 @@ class MinifyHtmlPlugin extends Plugin
    */
   public function onOutputGenerated()
   {
-    if ($this->config['plugins.minify-html.enabled']) {
-      require_once(__DIR__ . '/vendor/autoload.php');
+    require_once(__DIR__ . '/vendor/autoload.php');
 
       // HTML input (not compressed)
-      $sourceHtml = $this->grav['output'];
+    $sourceHtml = $this->grav['output'];
 
       // Compression mode
-      $mode = $this->config['plugins.minify-html.mode'];
+    $mode = $this->config['plugins.minify-html.mode'];
 
       // Instantiate the compressor
-      if ($mode == 'default') {
-        $compressor = \WyriHaximus\HtmlCompress\Factory::construct();
-      } elseif ($mode == 'fastest') {
-        $compressor = \WyriHaximus\HtmlCompress\Factory::constructFastest();
-      } elseif ($mode == 'smallest') {
-        $compressor = \WyriHaximus\HtmlCompress\Factory::constructSmallest();
-      }
+    if ($mode == 'default') {
+      $compressor = Factory::construct();
+    } elseif ($mode == 'fastest') {
+      $compressor = Factory::constructFastest();
+    } elseif ($mode == 'smallest') {
+      $compressor = Factory::constructSmallest();
+    }
 
       // HTML output (compressed)
-      $compressedHtml = $compressor->compress($sourceHtml);
+    $compressedHtml = $compressor->compress($sourceHtml);
 
       // Return the compressed HTML
-      $this->grav->output = $compressedHtml;
-    }
+    $this->grav->output = $compressedHtml;
   }
 }

@@ -20,6 +20,11 @@ class ComposerStaticInit3dd0f8d48a81da0a3c9fdc59d11c5654
         array (
             'Patchwork\\' => 10,
         ),
+        'M' => 
+        array (
+            'MatthiasMullie\\PathConverter\\' => 29,
+            'MatthiasMullie\\Minify\\' => 22,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -34,6 +39,31 @@ class ComposerStaticInit3dd0f8d48a81da0a3c9fdc59d11c5654
         'Patchwork\\' => 
         array (
             0 => __DIR__ . '/..' . '/patchwork/jsqueeze/src',
+        ),
+        'MatthiasMullie\\PathConverter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/matthiasmullie/path-converter/src',
+        ),
+        'MatthiasMullie\\Minify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/matthiasmullie/minify/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'Y' => 
+        array (
+            'YUI' => 
+            array (
+                0 => __DIR__ . '/..' . '/jalle19/php-yui-compressor/lib',
+            ),
+        ),
+        'J' => 
+        array (
+            'JShrink' => 
+            array (
+                0 => __DIR__ . '/..' . '/tedivm/jshrink/src',
+            ),
         ),
     );
 
@@ -115,6 +145,7 @@ class ComposerStaticInit3dd0f8d48a81da0a3c9fdc59d11c5654
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit3dd0f8d48a81da0a3c9fdc59d11c5654::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit3dd0f8d48a81da0a3c9fdc59d11c5654::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3dd0f8d48a81da0a3c9fdc59d11c5654::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit3dd0f8d48a81da0a3c9fdc59d11c5654::$classMap;
 
         }, null, ClassLoader::class);

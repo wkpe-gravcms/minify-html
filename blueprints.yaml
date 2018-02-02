@@ -1,38 +1,34 @@
 name: Minify Html
-version: 0.0.7
-description: plugin to minify HTML output
+version: 0.0.8
+description: Plugin to minify HTML output
 icon: compress
-author:
-  name: Jim Blue
-homepage: 'https://github.com/jimblue/grav-plugin-minify-html'
 keywords: 'grav-cms, grav-plugin, minify-html'
+license: MIT
+author:
+  name: jimblue
+homepage: 'https://github.com/jimblue/grav-plugin-minify-html'
 bugs: 'https://github.com/jimblue/grav-plugin-minify-html/issues'
 docs: 'https://github.com/jimblue/grav-plugin-minify-html/blob/master/README.md'
-license: MIT
 form:
   validation: strict
   fields:
     enabled:
       type: toggle
-      label: Plugin status
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
       highlight: 1
-      default: 0
+      default: 1
       options:
-        '0': Disabled
-        '1': Enabled
+        '1': PLUGIN_ADMIN.ENABLED
+        '0': PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
     mode:
       type: select
       size: medium
-      label: Compression Mode
-      help: >-
-        Choose a compression mode (default compress JS and CSS but doesn't do it
-        aggressively to get the smallest size.Fastest only compresses HTML and
-        ignores the rest. Smallest compress everything aggressively to get the
-        smallest size.)
+      label: PLUGIN_MINIFYHTML.LABEL
+      help: PLUGIN_MINIFYHTML.HELP
       default: default
       options:
-        default: default
-        fastest: fastest
-        smallest: smallest
+        default: PLUGIN_MINIFYHTML.OPTION.DEFAULT
+        fastest: PLUGIN_MINIFYHTML.OPTION.FASTEST
+        smallest: PLUGIN_MINIFYHTML.OPTION.SMALLEST
