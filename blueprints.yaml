@@ -2,7 +2,7 @@ name: Minify Html
 version: 0.0.8
 description: Minify HTML output
 icon: compress
-keywords: 'grav-cms, grav-plugin, minify-html'
+keywords: 'grav, plugin, minify-html'
 license: MIT
 author:
   name: jimblue
