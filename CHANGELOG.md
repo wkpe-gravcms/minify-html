@@ -1,3 +1,10 @@
+# v0.0.9
+## 06/02/2018
+
+1. [](#improved)
+   * Updated php dependencies
+   * Cleanup
+
 # v0.0.8
 ## 02/02/2018
 

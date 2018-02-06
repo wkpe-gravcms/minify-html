@@ -1,6 +1,6 @@
 # Minify Html Plugin
 
-**Minify Html** is a [Grav CMS](http://github.com/getgrav/grav) plugin to minify HTML output.
+**Minify Html** is for [Grav CMS](http://github.com/getgrav/grav). Minify HTML output.
 
 ## Installation
 
