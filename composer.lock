@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "92875b2ecbe0c1baaebd95988918280f",
+    "content-hash": "12007537f5a6753c6b80f16234eb7f60",
     "packages": [
         {
             "name": "jalle19/php-yui-compressor",
