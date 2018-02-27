@@ -1,11 +1,11 @@
 # v1.0.0
-## 06/02/2018
+## 02/07/2018
 
 1. [](#fix)
    * Fix composer
 
 # v0.0.9
-## 06/02/2018
+## 02/06/2018
 
 1. [](#improved)
    * Updated php dependencies
