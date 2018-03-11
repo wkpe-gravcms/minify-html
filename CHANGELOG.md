@@ -1,13 +1,19 @@
+# v1.0.2
+## 03/11/2018
+
+1. [](#bugfix)
+   * Fix changelog
+
 # v1.0.1
 ## 03/09/2018
 
-1. [](#fix)
+1. [](#bugfix)
    * Fix changelog
 
 # v1.0.0
 ## 02/07/2018
 
-1. [](#fix)
+1. [](#bugfix)
    * Fix composer
 
 # v0.0.9
