@@ -1,5 +1,5 @@
 name: Minify Html
-version: 1.0.2
+version: 1.0.3
 description: Minify HTML output
 icon: compress
 keywords: 'grav, plugin, minify-html'
@@ -22,13 +22,24 @@ form:
         '0': PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
+    cache:
+      type: toggle
+      label: PLUGIN_MINIFYHTML.CACHE.LABEL
+      help: PLUGIN_MINIFYHTML.CACHE.HELP
+      highlight: 1
+      default: 0
+      options:
+        '1': PLUGIN_ADMIN.ENABLED
+        '0': PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
     mode:
       type: select
       size: medium
-      label: PLUGIN_MINIFYHTML.LABEL
-      help: PLUGIN_MINIFYHTML.HELP
+      label: PLUGIN_MINIFYHTML.MODE.LABEL
+      help: PLUGIN_MINIFYHTML.MODE.HELP
       default: default
       options:
-        default: PLUGIN_MINIFYHTML.OPTION.DEFAULT
-        fastest: PLUGIN_MINIFYHTML.OPTION.FASTEST
-        smallest: PLUGIN_MINIFYHTML.OPTION.SMALLEST
+        default: PLUGIN_MINIFYHTML.MODE.OPTION.DEFAULT
+        fastest: PLUGIN_MINIFYHTML.MODE.OPTION.FASTEST
+        smallest: PLUGIN_MINIFYHTML.MODE.OPTION.SMALLEST

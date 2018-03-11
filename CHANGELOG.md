@@ -1,3 +1,9 @@
+# v1.0.3
+## 03/11/2018
+
+1. [](#improved)
+   * Add option to cache minified pages. You will need to manually clear the cache if you make any page modifications.
+
 # v1.0.2
 ## 03/11/2018
 
