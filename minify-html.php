@@ -51,6 +51,52 @@ class MinifyHtmlPlugin extends Plugin
    */
   public function onOutputGenerated()
   {
+    // Check if the page is type default
+    if ($this->isDefaultPageType()) {
+      // If Minify HTML cache option is enabled continue
+      // Else only compress the page
+      if ($this->config['plugins.minify-html.cache']) {
+        $cache = $this->grav['cache'];
+        $cache_id = md5('minify-html' . $this->grav['uri']->path());
+        $compressedHtmlCache = $cache->fetch($cache_id);
+        // If the page is not already cached compress the output then cache it
+        // Else return the precached page
+        if ($compressedHtmlCache === false) {
+          $compressedHtml = $this->compressHtml();
+          $cache->save($cache_id, $compressedHtml);
+        } else {
+          $compressedHtml = $compressedHtmlCache;
+        }
+      } else {
+        $compressedHtml = $this->compressHtml();
+      }
+
+      // Return the compressed HTML
+      $this->grav->output = $compressedHtml;
+    }
+  }
+
+  /**
+   * Give page type
+   *
+   * @return `true` if the page has no extension, or has the default page extension
+   *         `false` if for example is a RSS version of the page
+   */
+  private function isDefaultPageType()
+  {
+    $extension = $this->grav['uri']->extension();
+
+    if (!$extension) return true;
+    if (('.' . $extension) === $this->config['system.pages.append_url_extension']) return true;
+  }
+
+  /**
+   * Compress HTML output
+   *
+   * @return html output compressed
+   */
+  private function compressHtml()
+  {
     require_once(__DIR__ . '/vendor/autoload.php');
 
     // HTML input (not compressed)
@@ -60,18 +106,11 @@ class MinifyHtmlPlugin extends Plugin
     $mode = $this->config['plugins.minify-html.mode'];
 
     // Instantiate the compressor
-    if ($mode == 'default') {
-      $compressor = Factory::construct();
-    } elseif ($mode == 'fastest') {
-      $compressor = Factory::constructFastest();
-    } elseif ($mode == 'smallest') {
-      $compressor = Factory::constructSmallest();
-    }
+    if ($mode == 'default') $compressor = Factory::construct();
+    elseif ($mode == 'fastest') $compressor = Factory::constructFastest();
+    elseif ($mode == 'smallest') $compressor = Factory::constructSmallest();
 
     // HTML output (compressed)
-    $compressedHtml = $compressor->compress($sourceHtml);
-
-    // Return the compressed HTML
-    $this->grav->output = $compressedHtml;
+    return $compressor->compress($sourceHtml);
   }
 }

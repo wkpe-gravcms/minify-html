@@ -39,10 +39,16 @@ enabled: true
 You just have to enable the plugin to minify the HTML content.
 You can see the result by looking at the source in the browser console.
 
+## Cache
+
+You can enable or disable cache for Minify Html Plugin:
+
+* When enabled, you will need to manually clear the cache if you make any page modifications.
+
 ## Compression mode
 
 You can choose between 3 compression mode:
 
-* default compress JS and CSS but doesn't do it aggressively to get the smallest size.
+* Default compress JS and CSS but doesn't do it aggressively to get the smallest size.
 * Fastest only compresses HTML and ignores the rest.
 * Smallest compress everything aggressively to get the smallest size.
