@@ -52,7 +52,7 @@ class MinifyHtmlPlugin extends Plugin
   public function onOutputGenerated()
   {
     // Check if the page is type default
-    if ($this->isDefaultPageType()) {
+    if ($this->isPageHTML()) {
       // If Minify HTML cache option is enabled continue
       // Else only compress the page
       if ($this->config['plugins.minify-html.cache']) {
@@ -77,23 +77,19 @@ class MinifyHtmlPlugin extends Plugin
   }
 
   /**
-   * Give page type
+   * Check page type
    *
-   * @return `true` if the page has no extension, or has the default page extension
-   *         `false` if for example is a RSS version of the page
+   * @return boolean true i page type is HTML
    */
-  private function isDefaultPageType()
+  private function isPageHTML()
   {
-    $extension = $this->grav['uri']->extension();
-
-    if (!$extension) return true;
-    if (('.' . $extension) === $this->config['system.pages.append_url_extension']) return true;
+    if ($this->grav['uri']->extension() === 'html') return true;
   }
 
   /**
    * Compress HTML output
    *
-   * @return html output compressed
+   * @return string HTML output compressed
    */
   private function compressHtml()
   {
