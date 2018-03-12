@@ -51,13 +51,13 @@ class MinifyHtmlPlugin extends Plugin
    */
   public function onOutputGenerated()
   {
-    // Check if the page is type default
-    if ($this->isPageHTML()) {
+    // Check if the page type is HTML
+    if ($this->grav['uri']->extension() === 'html') {
       // If Minify HTML cache option is enabled continue
       // Else only compress the page
       if ($this->config['plugins.minify-html.cache']) {
         $cache = $this->grav['cache'];
-        $cache_id = md5('minify-html' . $this->grav['uri']->path());
+        $cache_id = md5('minify-html' . $this->grav['page']->id());
         $compressedHtmlCache = $cache->fetch($cache_id);
         // If the page is not already cached compress the output then cache it
         // Else return the precached page
@@ -74,16 +74,6 @@ class MinifyHtmlPlugin extends Plugin
       // Return the compressed HTML
       $this->grav->output = $compressedHtml;
     }
-  }
-
-  /**
-   * Check page type
-   *
-   * @return boolean true i page type is HTML
-   */
-  private function isPageHTML()
-  {
-    if ($this->grav['uri']->extension() === 'html') return true;
   }
 
   /**
