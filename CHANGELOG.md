@@ -1,3 +1,9 @@
+# v1.0.5
+## 03/12/2018
+
+1. [](#bugfix)
+   * Fix page languages got same cache
+
 # v1.0.4
 ## 03/12/2018
 
