@@ -1,3 +1,9 @@
+# v1.0.6
+## 03/15/2018
+
+1. [](#bugfix)
+   * Fix bug with simple search plugin. search results are not cache anymore.
+
 # v1.0.5
 ## 03/12/2018
 

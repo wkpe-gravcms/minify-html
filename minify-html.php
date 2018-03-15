@@ -53,9 +53,9 @@ class MinifyHtmlPlugin extends Plugin
   {
     // Check if the page type is HTML
     if ($this->grav['uri']->extension() === 'html') {
-      // If Minify HTML cache option is enabled continue
+      // If Minify HTML cache option is enabled and if page exist continue
       // Else only compress the page
-      if ($this->config['plugins.minify-html.cache']) {
+      if ($this->config['plugins.minify-html.cache'] and !is_null($this->grav['page']->route())) {
         $cache = $this->grav['cache'];
         $cache_id = md5('minify-html' . $this->grav['page']->id());
         $compressedHtmlCache = $cache->fetch($cache_id);
