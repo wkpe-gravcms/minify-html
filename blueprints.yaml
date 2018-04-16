@@ -1,8 +1,8 @@
 name: Minify Html
-version: 1.0.6
+version: 1.0.7
 description: Minify HTML output
 icon: compress
-keywords: 'grav, plugin, minify-html'
+keywords: 'grav, plugin, minify html'
 license: MIT
 author:
   name: jimblue
