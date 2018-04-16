@@ -4,6 +4,8 @@
 
 <p align="center">
   <img width="480" height="378" src="https://media.giphy.com/media/JUh0yTz4h931K/giphy.gif">
+  <br>
+  Shrink your website to load it faster!!!
 </p>
 
 ## 📦 Installation
