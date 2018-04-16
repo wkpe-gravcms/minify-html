@@ -51,8 +51,8 @@ You can enable or disable cache for Minify Html Plugin:
 
 You can choose between 3 compression mode:
 
-* Default compress JS and CSS but doesn't do it aggressively to get the smallest size.
-* Fastest only compresses HTML and ignores the rest.
-* Smallest compress everything aggressively to get the smallest size.
+* **Default**: _compress JS and CSS but doesn't do it aggressively to get the smallest size._
+* **Fastest**: _only compresses HTML and ignores the rest._
+* **Smallest**: _compress everything aggressively to get the smallest size._
 
 > NOTE: If you use the default or the smallest mode you should disable Grav asset pipeline minify for CSS and JS as it could break you page.
