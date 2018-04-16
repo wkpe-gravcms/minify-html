@@ -1,8 +1,8 @@
-# Minify Html Plugin
+# Minify Html Plugin ⚡️
 
-**Minify Html** is for [Grav CMS](http://github.com/getgrav/grav). Minify HTML output.
+**Minify Html** is a plugin for [Grav CMS](http://github.com/getgrav/grav) that minify HTML output for better loading performance.
 
-## Installation
+## 📦 Installation
 
 Installing the Minify Html plugin can be done in two ways. The GPM (Grav Package Manager) installation method enables you to quickly and easily install the plugin with a simple terminal command, while the manual method enables you to do so via a zip file.
 
@@ -24,31 +24,35 @@ You should now have all the plugin files under
 
 > NOTE: This plugin is a modular component for Grav which requires [Grav](http://github.com/getgrav/grav) and the [Error](https://github.com/getgrav/grav-plugin-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) to operate.
 
-## Configuration
+## 📐 Configuration
 
 Before configuring this plugin, you should copy the `user/plugins/minify-html/minify-html.yaml` to `user/config/plugins/minify-html.yaml` and only edit that copy.
 
-Here is the default configuration and an explanation of available options:
+Here is the default configuration:
 
 ```yaml
 enabled: true
+cache: false
+mode: default
 ```
 
-## Usage
+## ✨ Usage
 
 You just have to enable the plugin to minify the HTML content.
-You can see the result by looking at the source in the browser console.
+You can see the result by looking at the source in the browser.
 
-## Cache
+### Cache
 
 You can enable or disable cache for Minify Html Plugin:
 
 * When enabled, you will need to manually clear the cache if you make any page modifications.
 
-## Compression mode
+### Compression mode
 
 You can choose between 3 compression mode:
 
 * Default compress JS and CSS but doesn't do it aggressively to get the smallest size.
 * Fastest only compresses HTML and ignores the rest.
 * Smallest compress everything aggressively to get the smallest size.
+
+> NOTE: If you use the default or the smallest mode you should disable Grav asset pipeline minify for CSS and JS as it could break you page.
