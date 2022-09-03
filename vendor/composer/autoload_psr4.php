@@ -6,9 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'voku\\helper\\' => array($vendorDir . '/voku/simple_html_dom/src/voku/helper'),
+    'voku\\' => array($vendorDir . '/voku/html-min/src/voku'),
+    'tubalmartin\\CssMin\\' => array($vendorDir . '/tubalmartin/cssmin/src'),
+    'WyriHaximus\\JsCompress\\' => array($vendorDir . '/wyrihaximus/js-compress/src'),
     'WyriHaximus\\HtmlCompress\\' => array($vendorDir . '/wyrihaximus/html-compress/src'),
+    'WyriHaximus\\CssCompress\\' => array($vendorDir . '/wyrihaximus/css-compress/src'),
+    'WyriHaximus\\Compress\\' => array($vendorDir . '/wyrihaximus/compress-contracts/src', $vendorDir . '/wyrihaximus/compress/src'),
     'WebSharks\\CssMinifier\\' => array($vendorDir . '/websharks/css-minifier/src/includes/classes'),
-    'Patchwork\\' => array($vendorDir . '/patchwork/jsqueeze/src'),
+    'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'MatthiasMullie\\PathConverter\\' => array($vendorDir . '/matthiasmullie/path-converter/src'),
     'MatthiasMullie\\Minify\\' => array($vendorDir . '/matthiasmullie/minify/src'),
 );

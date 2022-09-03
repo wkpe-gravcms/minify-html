@@ -1,30 +1,51 @@
-<?php // @codeCoverageIgnoreStart
+<?php
 
-/*
- * This file is part of HtmlCompress.
- *
- ** (c) 2014 Cees-Jan Kiewiet
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+declare(strict_types=1);
+
 namespace WyriHaximus\HtmlCompress;
 
-/**
- * Class Patterns
- *
- * @package WyriHaximus\HtmlCompress
- */
-class Patterns
+use voku\helper\HtmlMinDomObserverInterface;
+use voku\helper\HtmlMinInterface;
+use voku\helper\SimpleHtmlDomInterface;
+
+final class Patterns implements HtmlMinDomObserverInterface
 {
-    const MATCH_PRE          = '!(<pre>|<pre[^>]*>?)(.*?)(</pre>)!is';
-    const MATCH_TEXTAREA     = '!(<textarea>|<textarea[^>]*>?)(.*?)(</textarea>)!is';
-    const MATCH_STYLE        = '!(<style>|<style[^>]*>?)(.*?)(</style>)!is';
-    const MATCH_STYLE_INLINE = '!(<[^>]* style=")(.*?)(")!is';
-    // @codingStandardsIgnoreStart
-    const MATCH_JSCRIPT      = '!(<script>|<script[^>]*type="text/javascript"[^>]*>|<script[^>]*type=\'text/javascript\'[^>]*>)(.*?)(</script>)!is';
-    const MATCH_LD_JSON      = '!(<script[^>]*type="application/ld\+json"[^>]*>|<script[^>]*type=\'application/ld\+json\'[^>]*>)(.*?)(</script>)!is';
-    // @codingStandardsIgnoreEnd
-    const MATCH_SCRIPT       = '!(<script[^>]*>?)(.*?)(</script>)!is';
-    const MATCH_NOCOMPRESS   = '!(<nocompress>)(.*?)(</nocompress>)!is';
+    /** @var array<PatternInterface> */
+    private array $patterns = [];
+
+    public function __construct(PatternInterface ...$patterns)
+    {
+        $this->patterns = $patterns;
+    }
+
+    public function add(PatternInterface $pattern): void
+    {
+        $this->patterns[] = $pattern;
+    }
+
+    public function compress(SimpleHtmlDomInterface $element): void
+    {
+        foreach ($this->patterns as $pattern) {
+            if ($pattern->matches($element) === true) {
+                $pattern->compress($element);
+
+                return;
+            }
+        }
+    }
+
+    /**
+     * Receive dom elements before the minification.
+     */
+    public function domElementBeforeMinification(SimpleHtmlDomInterface $element, HtmlMinInterface $htmlMin): void
+    {
+        $this->compress($element);
+    }
+
+    /**
+     * Receive dom elements after the minification.
+     */
+    public function domElementAfterMinification(SimpleHtmlDomInterface $element, HtmlMinInterface $htmlMin): void
+    {
+    }
 }

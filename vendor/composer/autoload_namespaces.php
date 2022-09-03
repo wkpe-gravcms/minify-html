@@ -6,6 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'YUI' => array($vendorDir . '/jalle19/php-yui-compressor/lib'),
     'JShrink' => array($vendorDir . '/tedivm/jshrink/src'),
 );

@@ -1,39 +1,26 @@
 <?php
 
-/*
- * This file is part of HtmlCompress.
- *
- ** (c) 2014 Cees-Jan Kiewiet
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+declare(strict_types=1);
+
 namespace WyriHaximus\HtmlCompress\Compressor;
 
-/**
- * Class HtmlCompressor
- *
- * @package WyriHaximus\HtmlCompress\Compressor
- */
-class HtmlCompressor extends Compressor
+use voku\helper\HtmlMin;
+use WyriHaximus\Compress\CompressorInterface;
+use WyriHaximus\HtmlCompress\HtmlMinObserver;
+use WyriHaximus\HtmlCompress\Patterns;
+
+final class HtmlCompressor implements CompressorInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected function execute($string)
+    private HtmlMin $htmlMin;
+
+    public function __construct(Patterns $patterns)
     {
-        // Replace newlines, returns and tabs with spaces
-        $string = str_replace(["\r", "\n", "\t"], ' ', $string);
-        // Replace multiple spaces with a single space
-        $string = preg_replace('/(\s+)/mu', ' ', $string);
+        $this->htmlMin = new HtmlMin();
+        $this->htmlMin->attachObserverToTheDomLoop(new HtmlMinObserver($patterns));
+    }
 
-        // Remove spaces that are followed by either > or <
-        $string = preg_replace('/ (>)/', '$1', $string);
-        // Remove spaces that are preceded by either > or <
-        $string = preg_replace('/(<) /', '$1', $string);
-        // Remove spaces that are between > and <
-        $string = preg_replace('/(>) (<)/', '>$2', $string);
-
-        return trim($string);
+    public function compress(string $string): string
+    {
+        return $this->htmlMin->minify($string);
     }
 }

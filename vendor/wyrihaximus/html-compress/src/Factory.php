@@ -1,177 +1,76 @@
 <?php
 
-/*
- * This file is part of HtmlCompress.
- *
- ** (c) 2014 Cees-Jan Kiewiet
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+declare(strict_types=1);
+
 namespace WyriHaximus\HtmlCompress;
 
-use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
-use WyriHaximus\HtmlCompress\Compressor\CssMinCompressor;
-use WyriHaximus\HtmlCompress\Compressor\CssMinifierCompressor;
-use WyriHaximus\HtmlCompress\Compressor\JShrinkCompressor;
-use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
-use WyriHaximus\HtmlCompress\Compressor\JSMinCompressor;
-use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
-use WyriHaximus\HtmlCompress\Compressor\MMMCSSCompressor;
-use WyriHaximus\HtmlCompress\Compressor\MMMJSCompressor;
-use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
-use WyriHaximus\HtmlCompress\Compressor\YUICSSCompressor;
-use WyriHaximus\HtmlCompress\Compressor\YUIJSCompressor;
+use voku\helper\HtmlMin;
+use WyriHaximus\Compress\ReturnCompressor;
+use WyriHaximus\CssCompress\Factory as CssFactory;
+use WyriHaximus\HtmlCompress\Pattern\JavaScript;
+use WyriHaximus\HtmlCompress\Pattern\LdJson;
+use WyriHaximus\HtmlCompress\Pattern\Script;
+use WyriHaximus\HtmlCompress\Pattern\Style;
+use WyriHaximus\HtmlCompress\Pattern\StyleAttribute;
+use WyriHaximus\JsCompress\Compressor\MMMJSCompressor;
+use WyriHaximus\JsCompress\Factory as JsFactory;
 
-/**
- * Class Factory
- *
- * @package WyriHaximus\HtmlCompress
- */
-class Factory
+final class Factory
 {
-    /**
-     * @return Parser
-     */
-    public static function constructFastest()
+    public static function constructFastest(): HtmlCompressorInterface
     {
-        return new Parser(
-            [
-                'compressors' => [
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_NOCOMPRESS,
-                            Patterns::MATCH_STYLE,
-                            Patterns::MATCH_LD_JSON,
-                            Patterns::MATCH_JSCRIPT,
-                            Patterns::MATCH_SCRIPT,
-                            Patterns::MATCH_PRE,
-                            Patterns::MATCH_TEXTAREA,
-                        ],
-                        'compressor' => new ReturnCompressor(),
-                    ],
-                ],
-            ]
+        return new HtmlCompressor(new HtmlMin(), new Patterns());
+    }
+
+    public static function construct(): HtmlCompressorInterface
+    {
+        $styleCompressor = CssFactory::construct();
+
+        return new HtmlCompressor(
+            new HtmlMin(),
+            new Patterns(
+                new LdJson(
+                    new MMMJSCompressor()
+                ),
+                new JavaScript(
+                    JsFactory::construct()
+                ),
+                new Script(
+                    new ReturnCompressor()
+                ),
+                new Style(
+                    $styleCompressor
+                ),
+                new StyleAttribute(
+                    $styleCompressor
+                )
+            )
         );
     }
 
-    /**
-     * @return Parser
-     */
-    public static function construct()
+    public static function constructSmallest(): HtmlCompressorInterface
     {
-        return new Parser(
-            [
-                'compressors' => [
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_NOCOMPRESS,
-                        ],
-                        'compressor' => new ReturnCompressor(),
-                    ],
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_LD_JSON,
-                        ],
-                        'compressor' => new JSMinCompressor(),
-                    ],
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_JSCRIPT,
-                        ],
-                        'compressor' => new JSqueezeCompressor(),
-                    ],
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_SCRIPT,
-                            Patterns::MATCH_PRE,
-                            Patterns::MATCH_TEXTAREA,
-                        ],
-                        'compressor' => new ReturnCompressor(),
-                    ],
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_STYLE,
-                            Patterns::MATCH_STYLE_INLINE,
-                        ],
-                        'compressor' => new CssMinCompressor(),
-                    ],
-                ],
-            ]
-        );
-    }
+        $styleCompressor = CssFactory::constructSmallest();
 
-    /**
-     * @param bool $externalCompressors When set to false only use pure PHP compressors.
-     * @return Parser
-     */
-    public static function constructSmallest($externalCompressors = true)
-    {
-        return new Parser(
-            [
-                'compressors' => [
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_NOCOMPRESS,
-                        ],
-                        'compressor' => new ReturnCompressor(),
-                    ],
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_LD_JSON,
-                        ],
-                        'compressor' => new BestResultCompressor(
-                            [
-                                new MMMJSCompressor(),
-                                new JSMinCompressor(),
-                                new JavaScriptPackerCompressor(),
-                                new JShrinkCompressor(),
-                                new YUIJSCompressor(),
-                                new ReturnCompressor(), // Sometimes no compression can already be the smallest
-                            ]
-                        ),
-                    ],
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_JSCRIPT,
-                        ],
-                        'compressor' => new BestResultCompressor(
-                            [
-                                new MMMJSCompressor(),
-                                new JSqueezeCompressor(),
-                                new JSMinCompressor(),
-                                new JavaScriptPackerCompressor(),
-                                new JShrinkCompressor(),
-                                $externalCompressors ? new YUICSSCompressor() : new ReturnCompressor(),
-                                new ReturnCompressor(), // Sometimes no compression can already be the smallest
-                            ]
-                        ),
-                    ],
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_SCRIPT,
-                            Patterns::MATCH_PRE,
-                            Patterns::MATCH_TEXTAREA,
-                        ],
-                        'compressor' => new ReturnCompressor(),
-                    ],
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_STYLE,
-                            Patterns::MATCH_STYLE_INLINE,
-                        ],
-                        'compressor' => new BestResultCompressor(
-                            [
-                                new MMMCSSCompressor(),
-                                new CssMinCompressor(),
-                                new CssMinifierCompressor(),
-                                $externalCompressors ? new YUICSSCompressor() : new ReturnCompressor(),
-                                new ReturnCompressor(),
-                            ]
-                        ),
-                    ],
-                ],
-            ]
+        return new HtmlCompressor(
+            new HtmlMin(),
+            new Patterns(
+                new LdJson(
+                    new MMMJSCompressor()
+                ),
+                new JavaScript(
+                    JsFactory::constructSmallest()
+                ),
+                new Script(
+                    new ReturnCompressor()
+                ),
+                new Style(
+                    $styleCompressor
+                ),
+                new StyleAttribute(
+                    $styleCompressor
+                )
+            )
         );
     }
 }

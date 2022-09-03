@@ -1,7 +1,7 @@
 HtmlCompress
 ============
 
-[![Build Status](https://travis-ci.org/WyriHaximus/HtmlCompress.png)](https://travis-ci.org/WyriHaximus/HtmlCompress)
+![Continuous Integration](https://github.com/WyriHaximus/HtmlCompress/workflows/Continuous%20Integration/badge.svg)
 [![Latest Stable Version](https://poser.pugx.org/WyriHaximus/html-compress/v/stable.png)](https://packagist.org/packages/WyriHaximus/html-compress)
 [![Total Downloads](https://poser.pugx.org/WyriHaximus/html-compress/downloads.png)](https://packagist.org/packages/WyriHaximus/html-compress)
 [![Coverage Status](https://coveralls.io/repos/WyriHaximus/HtmlCompress/badge.png)](https://coveralls.io/r/WyriHaximus/HtmlCompress)
@@ -22,9 +22,26 @@ composer require wyrihaximus/html-compress
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-$parser = \WyriHaximus\HtmlCompress\Factory::construct();
+$parser = Factory::constructSmallest();
 $compressedHtml = $parser->compress($sourceHtml);
 ```
+
+## Advanced Usage ##
+
+All factory methods come with a `WithHtmlMin` variant allowing you to set options on the underlying `HtmlMin` instance:
+
+```php
+<?php
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+$htmlMin = new HtmlMin();
+$htmlMin->doRemoveHttpPrefixFromAttributes();
+$htmlMin->doMakeSameDomainsLinksRelative(['example.com']);
+
+$parser = Factory::constructSmallest()->withHtmlMin($htmlMin);
+$compressedHtml = $parser->compress($sourceHtml);
+``` 
 
 ## Integration ##
 
@@ -32,10 +49,12 @@ $compressedHtml = $parser->compress($sourceHtml);
 * [Neos CMS](https://github.com/Flownative/neos-compressor)
 * [Sculpin](https://github.com/WyriHaximus/html-compress-sculpin)
 * [Twig](https://github.com/nochso/html-compress-twig)
+* [ReactPHP HTTP Middleware](https://github.com/WyriHaximus/reactphp-http-middleware-html-compress)
+* [PSR-15 Middleware](https://github.com/middlewares/minifier)
 
 ## License ##
 
-Copyright 2016 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
+Copyright 2019 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
