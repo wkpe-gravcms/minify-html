@@ -18,5 +18,11 @@
   },
   "config": {
     "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Grav\\Plugin\\MinifyHtml\\": "classes/plugin"
+    },
+    "classmap":  ["minify-html.php"]
   }
 }
