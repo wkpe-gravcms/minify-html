@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Grav\\Plugin\\MinifyHtmlPlugin' => $baseDir . '/minify-html.php',
     'JShrink\\Minifier' => $vendorDir . '/tedivm/jshrink/src/JShrink/Minifier.php',
     'MatthiasMullie\\Minify\\CSS' => $vendorDir . '/matthiasmullie/minify/src/CSS.php',
     'MatthiasMullie\\Minify\\Exception' => $vendorDir . '/matthiasmullie/minify/src/Exception.php',

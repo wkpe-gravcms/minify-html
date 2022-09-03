@@ -5,7 +5,7 @@
         'type' => 'grav-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'cbe7ba4cfc6b6f260f7df1016088967567e4a856',
+        'reference' => '5bf86ced82af7235a4168915ae19f4c7d6b60183',
         'name' => 'wkpe-gravcms/minify-html',
         'dev' => false,
     ),
@@ -106,7 +106,7 @@
             'type' => 'grav-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'cbe7ba4cfc6b6f260f7df1016088967567e4a856',
+            'reference' => '5bf86ced82af7235a4168915ae19f4c7d6b60183',
             'dev_requirement' => false,
         ),
         'wyrihaximus/compress' => array(

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit68c7b9776cd7587789eee097a47e7056
+class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
 {
     public static $files = array (
         '51fcf4e06c07cc00c920b44bcd900e7a' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/apc.php',
@@ -128,6 +128,10 @@ class ComposerStaticInit68c7b9776cd7587789eee097a47e7056
             'MatthiasMullie\\PathConverter\\' => 29,
             'MatthiasMullie\\Minify\\' => 22,
         ),
+        'G' => 
+        array (
+            'Grav\\Plugin\\MinifyHtml\\' => 23,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -176,6 +180,10 @@ class ComposerStaticInit68c7b9776cd7587789eee097a47e7056
         array (
             0 => __DIR__ . '/..' . '/matthiasmullie/minify/src',
         ),
+        'Grav\\Plugin\\MinifyHtml\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/classes/plugin',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -190,6 +198,7 @@ class ComposerStaticInit68c7b9776cd7587789eee097a47e7056
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Grav\\Plugin\\MinifyHtmlPlugin' => __DIR__ . '/../..' . '/minify-html.php',
         'JShrink\\Minifier' => __DIR__ . '/..' . '/tedivm/jshrink/src/JShrink/Minifier.php',
         'MatthiasMullie\\Minify\\CSS' => __DIR__ . '/..' . '/matthiasmullie/minify/src/CSS.php',
         'MatthiasMullie\\Minify\\Exception' => __DIR__ . '/..' . '/matthiasmullie/minify/src/Exception.php',
@@ -397,10 +406,10 @@ class ComposerStaticInit68c7b9776cd7587789eee097a47e7056
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit68c7b9776cd7587789eee097a47e7056::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit68c7b9776cd7587789eee097a47e7056::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit68c7b9776cd7587789eee097a47e7056::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit68c7b9776cd7587789eee097a47e7056::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitaeff166a1dd956a76552a4c986b1d245::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitaeff166a1dd956a76552a4c986b1d245::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitaeff166a1dd956a76552a4c986b1d245::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitaeff166a1dd956a76552a4c986b1d245::$classMap;
 
         }, null, ClassLoader::class);
     }
