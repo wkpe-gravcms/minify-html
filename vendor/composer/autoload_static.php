@@ -4,19 +4,19 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
+class ComposerStaticInit06d0210b4404c28433d14ab7456cf86d
 {
     public static $files = array (
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        'cf4bfa4d38046a7a3a88d77ed9602837' => __DIR__ . '/..' . '/wyrihaximus/constants/src/Boolean/constants_include.php',
+        'db10064975af14eb89effa72065d0e2b' => __DIR__ . '/..' . '/wyrihaximus/constants/src/ComposerAutoloader/constants_include.php',
+        'fa0319b5b82f24f47587007826b740cc' => __DIR__ . '/..' . '/wyrihaximus/constants/src/HTTPStatusCodes/constants_include.php',
+        'a135adc8de6a81a445603d9aa0bdbdae' => __DIR__ . '/..' . '/wyrihaximus/constants/src/Numeric/constants_include.php',
         '51fcf4e06c07cc00c920b44bcd900e7a' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/apc.php',
-        '288267919fedd3829a7732b5fb202197' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/array.php',
-        'a88cd08cfbf1600f7d5de6e587eee1fa' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/datetime.php',
         '47f619d9197b36cf5ab70738d7743fe2' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/libevent.php',
-        '213c1c2258e2e5aa409a0af3e993b3a9' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/password.php',
         'ea6bb8a12ef9b68f6ada99058e530760' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/mssql.php',
         '9a29089eb3ce41a446744c68a00f118c' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/stats.php',
-        'd5947c9df62650029c674c79176af68d' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/strings.php',
         '72243e5536b63e298acb6476f01f1aff' => __DIR__ . '/..' . '/thecodingmachine/safe/lib/special_cases.php',
-        '09f92ed6301edc510574c196c2b7d1af' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/mysqli.php',
         '3f648889e687f31c52f949ba8a9d0873' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/apache.php',
         'eeb4581d958421a4244aaa4167c6a575' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/apcu.php',
         '04cb0b3c1dac5b5ddb23c14e3d66dbe9' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/array.php',
@@ -37,7 +37,6 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'fbd163fc68c5faf73d5ed4002ffd836d' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/fpm.php',
         '21b511999d61411fab0692ff8795bbed' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/ftp.php',
         '85fbd73fc92365cd90526b0ea03cae3a' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/funchand.php',
-        'a2e4c6dfdbf36f56f1945ddcbd54e289' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/gettext.php',
         '51df9c146e0b7dcbdf358d8abd24dbdc' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/gmp.php',
         '93bb7fe678d7dcfb1322f8e3475a48b0' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/gnupg.php',
         'c171ba99cf316379ff66468392bf4950' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/hash.php',
@@ -47,6 +46,7 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'c28a05f498c01b810a714f7214b7a8da' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/image.php',
         '8063cd92acdf00fd978b5599eb7cc142' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/imap.php',
         '8bd26dbe768e9c9599edad7b198e5446' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/info.php',
+        '0c577fe603b029d4b65c84376b15dbd5' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/ingres-ii.php',
         'd4362910bde43c0f956b52527effd7d4' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/inotify.php',
         '696ba49197d9b55f0428a12bb5a818e1' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/json.php',
         '9818aaa99c8647c63f8ef62b7a368160' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/ldap.php',
@@ -55,14 +55,20 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'bdca804bb0904ea9f53f328dfc0bb8a5' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/mailparse.php',
         'b0a3fcac3eaf55445796d6af26b89366' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/mbstring.php',
         '98de16b8db03eb0cb4d318b4402215a6' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/misc.php',
+        'c112440003b56e243b192c11fa9d836e' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/msql.php',
         '7cefd81607cd21b8b3a15656eb6465f5' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/mysql.php',
+        'aaf438b080089c6d0686679cd34aa72e' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/mysqli.php',
+        'df0ef890e9afbf95f3924feb1c7a89f3' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/mysqlndMs.php',
+        'db595fee5972867e45c5327010d78735' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/mysqlndQc.php',
         'cbac956836b72483dcff1ac39d5c0a0f' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/network.php',
         '6c8f89dfbdc117d7871f572269363f25' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/oci8.php',
         '169a669966a45c06bf55ed029122729b' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/opcache.php',
         'def61bf4fecd4d4bca7354919cd69302' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/openssl.php',
         '26bb010649a6d32d4120181458aa6ef2' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/outcontrol.php',
+        '1212c201fe43c7492a085b2c71505e0f' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/password.php',
         '002ebcb842e2c0d5b7f67fe64cc93158' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/pcntl.php',
         '86df38612982dade72c7085ce7eca81f' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/pcre.php',
+        '1cacc3e65f82a473fbd5507c7ce4385d' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/pdf.php',
         '1fc22f445c69ea8706e82fce301c0831' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/pgsql.php',
         'c70b42561584f7144bff38cd63c4eef3' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/posix.php',
         '9923214639c32ca5173db03a177d3b63' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/ps.php',
@@ -73,6 +79,7 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         '775b964f72f827a1bf87c65ab5b10800' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/sem.php',
         '816428bd69c29ab5e1ed622af5dca0cd' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/session.php',
         '5093e233bedbefaef0df262bfbab0a5c' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/shmop.php',
+        '01352920b0151f17e671266e44b52536' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/simplexml.php',
         'b080617b1d949683c2e37f8f01dc0e15' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/sockets.php',
         '2708aa182ddcfe6ce27c96acaaa40f69' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/sodium.php',
         'f1b96cb260a5baeea9a7285cda82a1ec' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/solr.php',
@@ -95,10 +102,6 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'fe43ca06499ac37bc2dedd823af71eb5' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/zip.php',
         '356736db98a6834f0a886b8d509b0ecd' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/zlib.php',
         '52e181473ddd523a649d74860143e341' => __DIR__ . '/..' . '/meenie/javascript-packer/class.JavaScriptPacker.php',
-        'cf4bfa4d38046a7a3a88d77ed9602837' => __DIR__ . '/..' . '/wyrihaximus/constants/src/Boolean/constants_include.php',
-        'db10064975af14eb89effa72065d0e2b' => __DIR__ . '/..' . '/wyrihaximus/constants/src/ComposerAutoloader/constants_include.php',
-        'fa0319b5b82f24f47587007826b740cc' => __DIR__ . '/..' . '/wyrihaximus/constants/src/HTTPStatusCodes/constants_include.php',
-        'a135adc8de6a81a445603d9aa0bdbdae' => __DIR__ . '/..' . '/wyrihaximus/constants/src/Numeric/constants_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -121,7 +124,9 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Component\\CssSelector\\' => 30,
+            'Safe\\' => 5,
         ),
         'M' => 
         array (
@@ -168,9 +173,19 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         array (
             0 => __DIR__ . '/..' . '/websharks/css-minifier/src/includes/classes',
         ),
+        'Symfony\\Polyfill\\Php80\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
+        ),
         'Symfony\\Component\\CssSelector\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/css-selector',
+        ),
+        'Safe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/thecodingmachine/safe/lib',
+            1 => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated',
+            2 => __DIR__ . '/..' . '/thecodingmachine/safe/generated',
         ),
         'MatthiasMullie\\PathConverter\\' => 
         array (
@@ -197,8 +212,11 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
     );
 
     public static $classMap = array (
+        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Grav\\Plugin\\MinifyHtmlPlugin' => __DIR__ . '/../..' . '/minify-html.php',
+        'JSMin' => __DIR__ . '/..' . '/linkorb/jsmin-php/src/jsmin-1.1.1.php',
+        'JSMinException' => __DIR__ . '/..' . '/linkorb/jsmin-php/src/jsmin-1.1.1.php',
         'JShrink\\Minifier' => __DIR__ . '/..' . '/tedivm/jshrink/src/JShrink/Minifier.php',
         'MatthiasMullie\\Minify\\CSS' => __DIR__ . '/..' . '/matthiasmullie/minify/src/CSS.php',
         'MatthiasMullie\\Minify\\Exception' => __DIR__ . '/..' . '/matthiasmullie/minify/src/Exception.php',
@@ -210,6 +228,7 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'MatthiasMullie\\PathConverter\\Converter' => __DIR__ . '/..' . '/matthiasmullie/path-converter/src/Converter.php',
         'MatthiasMullie\\PathConverter\\ConverterInterface' => __DIR__ . '/..' . '/matthiasmullie/path-converter/src/ConverterInterface.php',
         'MatthiasMullie\\PathConverter\\NoConverter' => __DIR__ . '/..' . '/matthiasmullie/path-converter/src/NoConverter.php',
+        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'Safe\\DateTime' => __DIR__ . '/..' . '/thecodingmachine/safe/lib/DateTime.php',
         'Safe\\DateTimeImmutable' => __DIR__ . '/..' . '/thecodingmachine/safe/lib/DateTimeImmutable.php',
         'Safe\\Exceptions\\ApacheException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/ApacheException.php',
@@ -233,7 +252,6 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'Safe\\Exceptions\\FpmException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/FpmException.php',
         'Safe\\Exceptions\\FtpException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/FtpException.php',
         'Safe\\Exceptions\\FunchandException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/FunchandException.php',
-        'Safe\\Exceptions\\GettextException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/GettextException.php',
         'Safe\\Exceptions\\GmpException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/GmpException.php',
         'Safe\\Exceptions\\GnupgException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/GnupgException.php',
         'Safe\\Exceptions\\HashException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/HashException.php',
@@ -243,6 +261,7 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'Safe\\Exceptions\\ImageException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/ImageException.php',
         'Safe\\Exceptions\\ImapException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/ImapException.php',
         'Safe\\Exceptions\\InfoException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/InfoException.php',
+        'Safe\\Exceptions\\IngresiiException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/IngresiiException.php',
         'Safe\\Exceptions\\InotifyException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/InotifyException.php',
         'Safe\\Exceptions\\JsonException' => __DIR__ . '/..' . '/thecodingmachine/safe/lib/Exceptions/JsonException.php',
         'Safe\\Exceptions\\LdapException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/LdapException.php',
@@ -252,17 +271,21 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'Safe\\Exceptions\\MailparseException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/MailparseException.php',
         'Safe\\Exceptions\\MbstringException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/MbstringException.php',
         'Safe\\Exceptions\\MiscException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/MiscException.php',
+        'Safe\\Exceptions\\MsqlException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/MsqlException.php',
         'Safe\\Exceptions\\MssqlException' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/Exceptions/MssqlException.php',
         'Safe\\Exceptions\\MysqlException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/MysqlException.php',
-        'Safe\\Exceptions\\MysqliException' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/Exceptions/MysqliException.php',
+        'Safe\\Exceptions\\MysqliException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/MysqliException.php',
+        'Safe\\Exceptions\\MysqlndMsException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/MysqlndMsException.php',
+        'Safe\\Exceptions\\MysqlndQcException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/MysqlndQcException.php',
         'Safe\\Exceptions\\NetworkException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/NetworkException.php',
         'Safe\\Exceptions\\Oci8Exception' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/Oci8Exception.php',
         'Safe\\Exceptions\\OpcacheException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/OpcacheException.php',
         'Safe\\Exceptions\\OpensslException' => __DIR__ . '/..' . '/thecodingmachine/safe/lib/Exceptions/OpensslException.php',
         'Safe\\Exceptions\\OutcontrolException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/OutcontrolException.php',
-        'Safe\\Exceptions\\PasswordException' => __DIR__ . '/..' . '/thecodingmachine/safe/deprecated/Exceptions/PasswordException.php',
+        'Safe\\Exceptions\\PasswordException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/PasswordException.php',
         'Safe\\Exceptions\\PcntlException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/PcntlException.php',
         'Safe\\Exceptions\\PcreException' => __DIR__ . '/..' . '/thecodingmachine/safe/lib/Exceptions/PcreException.php',
+        'Safe\\Exceptions\\PdfException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/PdfException.php',
         'Safe\\Exceptions\\PgsqlException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/PgsqlException.php',
         'Safe\\Exceptions\\PosixException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/PosixException.php',
         'Safe\\Exceptions\\PsException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/PsException.php',
@@ -274,7 +297,7 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'Safe\\Exceptions\\SemException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/SemException.php',
         'Safe\\Exceptions\\SessionException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/SessionException.php',
         'Safe\\Exceptions\\ShmopException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/ShmopException.php',
-        'Safe\\Exceptions\\SimplexmlException' => __DIR__ . '/..' . '/thecodingmachine/safe/lib/Exceptions/SimplexmlException.php',
+        'Safe\\Exceptions\\SimplexmlException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/SimplexmlException.php',
         'Safe\\Exceptions\\SocketsException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/SocketsException.php',
         'Safe\\Exceptions\\SodiumException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/SodiumException.php',
         'Safe\\Exceptions\\SolrException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/SolrException.php',
@@ -297,6 +320,7 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'Safe\\Exceptions\\YazException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/YazException.php',
         'Safe\\Exceptions\\ZipException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/ZipException.php',
         'Safe\\Exceptions\\ZlibException' => __DIR__ . '/..' . '/thecodingmachine/safe/generated/Exceptions/ZlibException.php',
+        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\CssSelector\\CssSelectorConverter' => __DIR__ . '/..' . '/symfony/css-selector/CssSelectorConverter.php',
         'Symfony\\Component\\CssSelector\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/css-selector/Exception/ExceptionInterface.php',
         'Symfony\\Component\\CssSelector\\Exception\\ExpressionErrorException' => __DIR__ . '/..' . '/symfony/css-selector/Exception/ExpressionErrorException.php',
@@ -345,6 +369,10 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'Symfony\\Component\\CssSelector\\XPath\\Translator' => __DIR__ . '/..' . '/symfony/css-selector/XPath/Translator.php',
         'Symfony\\Component\\CssSelector\\XPath\\TranslatorInterface' => __DIR__ . '/..' . '/symfony/css-selector/XPath/TranslatorInterface.php',
         'Symfony\\Component\\CssSelector\\XPath\\XPathExpr' => __DIR__ . '/..' . '/symfony/css-selector/XPath/XPathExpr.php',
+        'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
+        'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
+        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'WebSharks\\CssMinifier\\Core' => __DIR__ . '/..' . '/websharks/css-minifier/src/includes/classes/Core.php',
         'WyriHaximus\\Compress\\CompressorInterface' => __DIR__ . '/..' . '/wyrihaximus/compress-contracts/src/CompressorInterface.php',
         'WyriHaximus\\Compress\\ReturnCompressor' => __DIR__ . '/..' . '/wyrihaximus/compress/src/ReturnCompressor.php',
@@ -365,6 +393,7 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
         'WyriHaximus\\HtmlCompress\\Pattern\\Style' => __DIR__ . '/..' . '/wyrihaximus/html-compress/src/Pattern/Style.php',
         'WyriHaximus\\HtmlCompress\\Pattern\\StyleAttribute' => __DIR__ . '/..' . '/wyrihaximus/html-compress/src/Pattern/StyleAttribute.php',
         'WyriHaximus\\HtmlCompress\\Patterns' => __DIR__ . '/..' . '/wyrihaximus/html-compress/src/Patterns.php',
+        'WyriHaximus\\JsCompress\\Compressor\\JSMinCompressor' => __DIR__ . '/..' . '/wyrihaximus/js-compress/src/Compressor/JSMinCompressor.php',
         'WyriHaximus\\JsCompress\\Compressor\\JShrinkCompressor' => __DIR__ . '/..' . '/wyrihaximus/js-compress/src/Compressor/JShrinkCompressor.php',
         'WyriHaximus\\JsCompress\\Compressor\\JavaScriptPackerCompressor' => __DIR__ . '/..' . '/wyrihaximus/js-compress/src/Compressor/JavaScriptPackerCompressor.php',
         'WyriHaximus\\JsCompress\\Compressor\\MMMJSCompressor' => __DIR__ . '/..' . '/wyrihaximus/js-compress/src/Compressor/MMMJSCompressor.php',
@@ -406,10 +435,10 @@ class ComposerStaticInitaeff166a1dd956a76552a4c986b1d245
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitaeff166a1dd956a76552a4c986b1d245::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitaeff166a1dd956a76552a4c986b1d245::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitaeff166a1dd956a76552a4c986b1d245::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitaeff166a1dd956a76552a4c986b1d245::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit06d0210b4404c28433d14ab7456cf86d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit06d0210b4404c28433d14ab7456cf86d::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit06d0210b4404c28433d14ab7456cf86d::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit06d0210b4404c28433d14ab7456cf86d::$classMap;
 
         }, null, ClassLoader::class);
     }
