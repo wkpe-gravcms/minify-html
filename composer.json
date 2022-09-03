@@ -2,6 +2,7 @@
   "name": "wkpe-gravcms/minify-html",
   "description": "a gravcms plugin to minify HTML output",
   "license": "MIT",
+  "type": "grav-plugin",
   "authors": [
     {
       "name": "Wasseem Khayrattee",
