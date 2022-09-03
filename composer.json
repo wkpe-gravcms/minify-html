@@ -17,7 +17,10 @@
     "wyrihaximus/html-compress": "4.2.1"
   },
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "platform": {
+      "php": "7.4"
+    }
   },
   "autoload": {
     "psr-4": {
